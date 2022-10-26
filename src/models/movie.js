@@ -9,7 +9,7 @@ const movieSchema = new Schema(
     genre: { type: String, require: true },
   },
   {
-    timeStamps: true,
+    timestamps: true,
   }
 );
 
