@@ -17,7 +17,7 @@ server.use("/movies", moviesRoutes);
 
 server.use("*", (req, res) => {
   const error = new Error("Ruta no encontrada error 404");
-  error.status = 400;
+  error.status = 404;
   return res.status(error.status).json(error.message);
 });
 
