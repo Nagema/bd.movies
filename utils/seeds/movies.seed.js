@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Movie = require("../../models/movie");
+const Movie = require("../../src/models/movie");
 
 require("dotenv").config();
 
@@ -47,18 +47,15 @@ const movies = [
 const movieDocuments = movies.map((movie) => new Movie(movie));
 
 mongoose
-  .connect(DB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(DB_URL)
   .then(async () => {
     await Movie.collection.drop();
     console.log("Se han eliminado las pelis");
   })
-  .catch((error) => console.log("Los datos no se han podido eliminar" + error))
+  .catch((error) => console.log("Los datos no se han podido eliminar " + error))
   .then(async () => {
     await Movie.insertMany(movieDocuments);
-    console.log("Se generado las pelis");
+    console.log("Se han generado las pelis");
   })
-  .catch((error) => console.log("No se han metido los datos" + error))
+  .catch((error) => console.log("No se han metido los datos " + error))
   .finally(() => mongoose.disconnect());
