@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form method="POST" action="http://localhost:8000/movies">
+      <div>
+        <label for="">Movie Title</label>
+        <input type="text" name="title" placeholder="Movie Title" />
+      </div>
+      <div>
+        <label for="">Director</label>
+        <input type="text" name="director" placeholder="Director Name" />
+      </div>
+      <div>
+        <label for="">Movie Year</label>
+        <input type="text" name="year" placeholder="Movie Year" />
+      </div>
+      <div>
+        <label for="">Genre</label>
+        <select name="genre">
+          <option value="Acción">Acción</option>
+          <option value="Animación">Animación</option>
+          <option value="Ciencia ficción">Ciencia ficción</option>
+          <option value="Comedia">Comedia</option>
+          <option value="Comedia romántica">Comedia romántica</option>
+          <option value="Drama">Drama</option>
+          <option value="Terror">Terror</option>
+          <option value="Romance">Romance</option>
+          <option value="Historico">Historico</option>
+          <option value="Otro">Otro</option>
+        </select>
+      </div>
+
+      <button type="submit">Enviar formulario</button>
+    </form>
+  </body>
+</html>
